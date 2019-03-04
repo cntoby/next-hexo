@@ -51,8 +51,9 @@ favicon:
 language_switcher: false
 
 footer:
-  # Specify the date when the site was setup. If not defined, current year will be used.
-  #since: 2015
+  # Specify the date when the site was setup.
+  # If not defined, current year will be used.
+  since: 2013
 
   # Icon between year and copyright info.
   icon:
@@ -65,11 +66,21 @@ footer:
 
   # If not defined, `author` from Hexo `_config.yml` will be used.
   copyright:
+  # -------------------------------------------------------------
+  powered:
+    # Hexo link (Powered by Hexo).
+    enable: false
+    # Version info of Hexo after Hexo link (vX.X.X).
+    version: true
 
-  # Powered by Hexo & NexT
-  powered: true
-
-  # Beian ICP and gongan information for Chinese users. See: http://www.beian.miit.gov.cn, http://www.beian.gov.cn
+  theme:
+    # Theme & scheme info link (Theme - NexT.scheme).
+    enable: false
+    # Version info of NexT after scheme info (vX.X.X).
+    version: true
+  # -------------------------------------------------------------
+  # Beian icp information for Chinese users. In China, every legal website should have a beian icp in website footer.
+  # http://www.miitbeian.gov.cn
   beian:
     enable: false
     icp:
@@ -91,16 +102,28 @@ creative_commons:
   post: false
   language:
 
+# Follow me on GitHub banner in right-top corner.
+github_banner:
+  enable: true
+  permalink: https://github.com/cntoby
+  title: Follow me on GitHub
+
 
 # ---------------------------------------------------------------
 # Scheme Settings
 # ---------------------------------------------------------------
 
-# Schemes
-scheme: Muse
-#scheme: Mist
-#scheme: Pisces
-#scheme: Gemini
+# Canonical, set a canonical link tag in your hexo, you could use it for your SEO of blog.
+# See: https://support.google.com/webmasters/answer/139066
+# Tips: Before you open this tag, remember set up your URL in hexo _config.yml (e.g. url: http://yourdomain.com)
+canonical: true
+
+# Change headers hierarchy on site-subtitle (will be main site description) and on all post / page titles for better SEO-optimization.
+seo: true
+
+# If true, will add site-subtitle to index page, added in main hexo config.
+# subtitle: Subtitle
+index_with_subtitle: true
 
 # Dark Mode
 darkmode: false
@@ -116,16 +139,16 @@ darkmode: false
 # When running the site in a subdirectory (e.g. yoursite.com/blog), remove the leading slash from link value (/archives -> archives).
 # External url should start with http:// or https://
 menu:
-  home: / || fa fa-home
-  #about: /about/ || fa fa-user
-  #tags: /tags/ || fa fa-tags
-  #categories: /categories/ || fa fa-th
-  archives: /archives/ || fa fa-archive
-  #schedule: /schedule/ || fa fa-calendar
-  #sitemap: /sitemap.xml || fa fa-sitemap
-  #commonweal: /404/ || fa fa-heartbeat
+  home: / || home
+  about: /about/ || user
+  tags: /tags/ || tags
+  categories: /categories/ || th
+  archives: /archives/ || archive
+  schedule: /schedule/ || calendar
+  sitemap: /sitemap.xml || sitemap
+  #commonweal: /404/ || heartbeat
 
-# Enable / Disable menu icons / item badges.
+# Enable/Disable menu icons / item badges.
 menu_settings:
   icons: true
   badges: false
@@ -136,10 +159,11 @@ menu_settings:
 # See: https://theme-next.org/docs/theme-settings/sidebar
 # ---------------------------------------------------------------
 
-sidebar:
-  # Sidebar Position.
-  position: left
-  #position: right
+# Schemes
+#scheme: Muse
+#scheme: Mist
+#scheme: Pisces
+scheme: Gemini
 
   # Manual define the sidebar width. If commented, will be default for:
   # Muse | Mist: 320
@@ -177,20 +201,21 @@ site_state: true
 # Key is the link label showing to end users.
 # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
 social:
-  #GitHub: https://github.com/yourname || fab fa-github
-  #E-Mail: mailto:yourname@gmail.com || fa fa-envelope
-  #Weibo: https://weibo.com/yourname || fab fa-weibo
-  #Google: https://plus.google.com/yourname || fab fa-google
-  #Twitter: https://twitter.com/yourname || fab fa-twitter
-  #FB Page: https://www.facebook.com/yourname || fab fa-facebook
-  #StackOverflow: https://stackoverflow.com/yourname || fab fa-stack-overflow
-  #YouTube: https://youtube.com/yourname || fab fa-youtube
-  #Instagram: https://instagram.com/yourname || fab fa-instagram
-  #Skype: skype:yourname?call|chat || fab fa-skype
+  GitHub: https://github.com/cntoby || github
+  #E-Mail: mailto:yourname@gmail.com || envelope
+  Weibo: https://weibo.com/cntoby || weibo
+  #Google: https://plus.google.com/yourname || google
+  Twitter: https://twitter.com/cntoby || twitter
+  #FB Page: https://www.facebook.com/yourname || facebook
+  #VK Group: https://vk.com/yourname || vk
+  #StackOverflow: https://stackoverflow.com/yourname || stack-overflow
+  #YouTube: https://youtube.com/yourname || youtube
+  #Instagram: https://instagram.com/yourname || instagram
+  #Skype: skype:yourname?call|chat || skype
 
 social_icons:
   enable: true
-  icons_only: false
+  icons_only: true
   transition: false
 
 # Blog rolls
@@ -243,7 +268,10 @@ post_meta:
   item_text: true
   created_at: true
   updated_at:
-    enable: true
+    enable: false
+    # If true, show updated date label only if `updated date` is different from `created date` (post edited in another day than was created).
+    # And if post was edited in same day as created, edited time will show in popup title under created time label.
+    # If false show anyway, but if post edited in same day, show only edited time.
     another_day: true
   categories: true
 
@@ -282,8 +310,8 @@ follow_me:
 # Related popular posts
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
 related_posts:
-  enable: false
-  title: # Custom header, leave empty to use the default one
+  enable: true
+  title: # custom header, leave empty to use the default one
   display_in_home: false
   params:
     maxCount: 5
@@ -378,14 +406,9 @@ reading_progress:
   color: "#37c6c0"
   height: 3px
 
-# Bookmark Support
-bookmark:
-  enable: false
-  # Customize the color of the bookmark.
-  color: "#222"
-  # If auto, save the reading progress when closing the page or clicking the bookmark-icon.
-  # If manual, only save it by clicking the bookmark-icon.
-  save: auto
+tagcloud:
+  # If true, font size and color can be customized
+  enable: true
 
 # `Follow me on GitHub` banner in the top-right corner.
 github_banner:
@@ -610,10 +633,10 @@ changyan:
 # Valine
 # For more information: https://valine.js.org, https://github.com/xCss/Valine
 valine:
-  enable: false
-  appid: # Your leancloud application appid
-  appkey: # Your leancloud application appkey
-  notify: false # Mail notifier
+  enable: true # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version.
+  appid: hPI6qJNF47iB6VExH5KUHO8I-MdYXbMMI # your leancloud application appid
+  appkey: 8pdij7EH6XqgPYRwGFnaGUcu # your leancloud application appkey
+  notify: false # mail notifier, See: https://github.com/xCss/Valine/wiki
   verify: false # Verification code
   placeholder: Just go go # Comment box placeholder
   avatar: mm # Gravatar style
