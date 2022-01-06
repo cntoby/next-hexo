@@ -610,7 +610,7 @@ changyan:
 # Valine
 # For more information: https://valine.js.org, https://github.com/xCss/Valine
 valine:
-  enable: true
+  enable: false
   appid: hPI6qJNF47iB6VExH5KUHO8I-MdYXbMMI # Your leancloud application appid
   appkey: 8pdij7EH6XqgPYRwGFnaGUcu # Your leancloud application appkey
   notify: false # Mail notifier
@@ -633,7 +633,7 @@ livere_uid: # <your_uid>
 # Gitalk
 # For more information: https://gitalk.github.io, https://github.com/gitalk/gitalk
 gitalk:
-  enable: false
+  enable: true
   github_id: cntoby # GitHub repo owner
   repo: cntoby.github.io # Repository name to store issues
   client_id: 2b97a8f0b33625b5f466 # GitHub Application Client ID
