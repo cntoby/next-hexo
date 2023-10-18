@@ -591,14 +591,14 @@ disqus:
 # Demo: https://suka.js.org/DisqusJS/
 # For more information: https://github.com/SukkaW/DisqusJS
 disqusjs:
-  enable: false
+  enable: true
   # API Endpoint of Disqus API (https://disqus.com/api/).
   # Leave api empty if you are able to connect to Disqus API. Otherwise you need a reverse proxy for it.
   # For example:
   # api: https://disqus.skk.moe/disqus/
   api:
-  apikey: # Register new application from https://disqus.com/api/applications/
-  shortname: # See: https://disqus.com/admin/settings/general/
+  apikey: cWul0aOeNdEUCrzyqblGU0BowOQtNTIbuyYg1jfYgPhmvZJMFboZrgPiDXYujntF # Register new application from https://disqus.com/api/applications/
+  shortname: cntoby # See: https://disqus.com/admin/settings/general/
 
 # Changyan
 changyan:
@@ -633,7 +633,7 @@ livere_uid: # <your_uid>
 # Gitalk
 # For more information: https://gitalk.github.io, https://github.com/gitalk/gitalk
 gitalk:
-  enable: true
+  enable: false
   github_id: cntoby # GitHub repo owner
   repo: cntoby.github.io # Repository name to store issues
   client_id: 2b97a8f0b33625b5f466 # GitHub Application Client ID
